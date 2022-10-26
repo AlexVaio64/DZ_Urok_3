@@ -1,26 +1,22 @@
 ﻿// Программа принимает на вход пятизначное число и проверяет, 
-// является ли оно палиндромом. Через строку решать нельзя.
+// является ли оно палиндромом.
 // 14212 -> нет
 // 12821 -> да
 // 23432 -> да
 
-Console.WriteLine("Введите пятизначное число: ");
-string writeTxt = Console.ReadLine();
-string txtToCheck = writeTxt.ToLower().Replace(" ","");
-int length = txtToCheck.Length;
-string result = "не является";
+Console.Write("Введите пятизначное число, чтобы выяснить, является ли оно палиндромом: ");
+string? number = Console.ReadLine();
 
-bool IsPalindrome(string p)
-{
-    int count = 0;
-    while (count <= length)
-    {
-        if (txtToCheck[count] != txtToCheck[length - 1]) return false;
-        length--;
-        count++;
-    }
-    return true;
+void CheckingNumber(string number){
+  if (number[0]==number[4] || number[1]==number[3])
+  {
+    Console.WriteLine($"Введённое число: {number} является палиндром.");
+  }
+  else Console.WriteLine($"Введённое число: {number} не является палиндром.");
 }
 
-if (IsPalindrome(txtToCheck)) result = "является";
-Console.WriteLine($"Введенное число {result} палиндромом");
+if (number!.Length == 5)
+{
+  CheckingNumber(number);
+}
+else Console.WriteLine($"Ошибка ввода. Введите пятизначное число.");
