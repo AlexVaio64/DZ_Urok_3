@@ -5,7 +5,7 @@
 //
 
 
-Console.WriteLine("\n Введите координаты трёх точек для вычисления расстояния между ними.");
+Console.WriteLine("Введите координаты трёх точек для вычисления расстояния между ними.");
 int x1 = Coordinate("x", "A");
 int y1 = Coordinate("y", "A");
 int z1 = Coordinate("z", "A");
